@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240111 18:31:49.831" rpa="false" schemaversion="4">
+<suite id="s1" name="Login" source="C:\Users\lidia\oriol-molist\RingZero\tests\login.robot">
+<test id="s1-t1" name="I Login in Application" line="7">
+<kw name="Open Android Test App" library="resource">
+<msg timestamp="20240111 18:31:50.222" level="TRACE">Arguments: [  ]</msg>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>deviceName=${ANDROID_DEVICE_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<arg>appActivity=${ANDROID_APP_ACTIVITY}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<msg timestamp="20240111 18:31:50.222" level="TRACE">Arguments: [ 'http://localhost:4723/wd/hub' | automationName='UIAutomator2' | platformName='Android' | deviceName='R58N323F7AN' | platformVersion='10' | appPackage='com.todoist' | appActivity='com.todoist.activity.HomeActivity' ]</msg>
+<msg timestamp="20240111 18:31:50.222" level="DEBUG">POST http://localhost:4723/wd/hub/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"appium:automationName": "UIAutomator2", "platformName": "Android", "appium:deviceName": "R58N323F7AN", "appium:platformVersion": "10", "appium:appPackage": "com.todoist", "appium:appActivity": "com.todoist.activity.HomeActivity"}}}</msg>
+<msg timestamp="20240111 18:31:50.291" level="DEBUG">Starting new HTTP connection (1): localhost:4723</msg>
+<msg timestamp="20240111 18:31:52.337" level="DEBUG">http://localhost:4723 "POST /wd/hub/session HTTP/1.1" 404 0</msg>
+<msg timestamp="20240111 18:31:52.337" level="DEBUG">Remote response: status=404 | data={"status":9,"value":{"error":"unknown command","message":"The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource","stacktrace":""}} | headers=HTTPHeaderDict({'X-Powered-By': 'Express', 'Vary': 'X-HTTP-Method-Override', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '211', 'ETag': 'W/"d3-gyQ2eXfteJGx5Yg/CojOo7oJODc"', 'Date': 'Thu, 11 Jan 2024 17:31:52 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=600'})</msg>
+<msg timestamp="20240111 18:31:52.337" level="DEBUG">Finished Request</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20240111 18:31:52.337" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20240111 18:31:52.337" level="FAIL">No application is open</msg>
+<msg timestamp="20240111 18:31:52.352" level="DEBUG">Traceback (most recent call last):
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 16, in _run_on_failure_decorator
+    return method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\AppiumLibrary\keywords\_applicationmanagement.py", line 60, in open_application
+    application = webdriver.Remote(str(remote_url), options=desired_caps, strict_ssl=strict_ssl)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\appium\webdriver\webdriver.py", line 229, in __init__
+    super().__init__(
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 209, in __init__
+    self.start_session(capabilities)
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\appium\webdriver\webdriver.py", line 321, in start_session
+    response = self.execute(RemoteCommand.NEW_SESSION, w3c_caps)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 348, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 21, in _run_on_failure_decorator
+    raise err
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 16, in _run_on_failure_decorator
+    return method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\AppiumLibrary\keywords\_screenshot.py", line 34, in capture_page_screenshot
+    base64_screenshot = self._current_application().get_screenshot_as_base64()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\AppiumLibrary\keywords\_applicationmanagement.py", line 469, in _current_application
+    raise RuntimeError('No application is open')
+RuntimeError: No application is open</msg>
+<status status="FAIL" starttime="20240111 18:31:52.337" endtime="20240111 18:31:52.352"/>
+</kw>
+<msg timestamp="20240111 18:31:52.352" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20240111 18:31:52.352" level="FAIL">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+</msg>
+<msg timestamp="20240111 18:31:52.352" level="DEBUG">Traceback (most recent call last):
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 21, in _run_on_failure_decorator
+    raise err
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 16, in _run_on_failure_decorator
+    return method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\AppiumLibrary\keywords\_applicationmanagement.py", line 60, in open_application
+    application = webdriver.Remote(str(remote_url), options=desired_caps, strict_ssl=strict_ssl)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\appium\webdriver\webdriver.py", line 229, in __init__
+    super().__init__(
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 209, in __init__
+    self.start_session(capabilities)
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\appium\webdriver\webdriver.py", line 321, in start_session
+    response = self.execute(RemoteCommand.NEW_SESSION, w3c_caps)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 348, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource</msg>
+<status status="FAIL" starttime="20240111 18:31:50.222" endtime="20240111 18:31:52.352"/>
+</kw>
+<status status="FAIL" starttime="20240111 18:31:50.222" endtime="20240111 18:31:52.352"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<msg timestamp="20240111 18:31:52.352" level="TRACE">Arguments: [  ]</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20240111 18:31:52.362" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20240111 18:31:52.362" level="TRACE">Return: None</msg>
+<msg timestamp="20240111 18:31:52.362" level="FAIL">No application is open</msg>
+<msg timestamp="20240111 18:31:52.362" level="DEBUG">Traceback (most recent call last):
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 16, in _run_on_failure_decorator
+    return method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\AppiumLibrary\keywords\_applicationmanagement.py", line 23, in close_application
+    self._debug('Closing application with session id %s' % self._current_application().session_id)
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\AppiumLibrary\keywords\_applicationmanagement.py", line 469, in _current_application
+    raise RuntimeError('No application is open')
+RuntimeError: No application is open
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 21, in _run_on_failure_decorator
+    raise err
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 16, in _run_on_failure_decorator
+    return method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\AppiumLibrary\keywords\_screenshot.py", line 34, in capture_page_screenshot
+    base64_screenshot = self._current_application().get_screenshot_as_base64()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\AppiumLibrary\keywords\_applicationmanagement.py", line 469, in _current_application
+    raise RuntimeError('No application is open')
+RuntimeError: No application is open</msg>
+<status status="FAIL" starttime="20240111 18:31:52.362" endtime="20240111 18:31:52.362"/>
+</kw>
+<msg timestamp="20240111 18:31:52.362" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20240111 18:31:52.362" level="TRACE">Return: None</msg>
+<msg timestamp="20240111 18:31:52.362" level="FAIL">No application is open</msg>
+<msg timestamp="20240111 18:31:52.362" level="DEBUG">Traceback (most recent call last):
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 21, in _run_on_failure_decorator
+    raise err
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 16, in _run_on_failure_decorator
+    return method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\AppiumLibrary\keywords\_applicationmanagement.py", line 23, in close_application
+    self._debug('Closing application with session id %s' % self._current_application().session_id)
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lidia\AppData\Local\Programs\Python\Python312\Lib\site-packages\AppiumLibrary\keywords\_applicationmanagement.py", line 469, in _current_application
+    raise RuntimeError('No application is open')
+RuntimeError: No application is open</msg>
+<status status="FAIL" starttime="20240111 18:31:52.352" endtime="20240111 18:31:52.362">No application is open</status>
+</kw>
+<status status="FAIL" starttime="20240111 18:31:50.222" endtime="20240111 18:31:52.366">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+
+
+Also teardown failed:
+No application is open</status>
+</test>
+<doc>Android Basic Interactions</doc>
+<status status="FAIL" starttime="20240111 18:31:49.831" endtime="20240111 18:31:52.368"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20240111 18:31:52.352" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20240111 18:31:52.362" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+</errors>
+</robot>

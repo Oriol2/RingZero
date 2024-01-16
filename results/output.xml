@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240116 18:00:16.182" rpa="false" schemaversion="4">
+<suite id="s1" name="RingZero" source="C:\Users\lidia\oriol-molist\RingZero">
+<suite id="s1-s1" name="Tests" source="C:\Users\lidia\oriol-molist\RingZero\tests">
+<suite id="s1-s1-s1" name="Android Login" source="C:\Users\lidia\oriol-molist\RingZero\tests\android_login.robot">
+<test id="s1-s1-s1-t1" name="I Login in Application" line="8">
+<kw name="Open Android Test App" library="resource">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://127.0.0.1:4723/wd/hub</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>deviceName=${ANDROID_DEVICE_NAME}</arg>
+<arg>app=${ANDROID_APP}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<arg>appActivity=${ANDROID_APP_ACTIVITY}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" starttime="20240116 18:00:17.278" endtime="20240116 18:00:44.465"/>
+</kw>
+<status status="PASS" starttime="20240116 18:00:17.276" endtime="20240116 18:00:44.468"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${TODOIST_LOGO_ID}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20240116 18:00:47.207" level="INFO">criteria is com.todoist:id/logo
+criteria is com.todoist:id/logo
+criteria is com.todoist:id/logo
+criteria is com.todoist:id/logo</msg>
+<status status="PASS" starttime="20240116 18:00:44.481" endtime="20240116 18:00:47.208"/>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<arg>${GOOGLE_BUTTON_ID}</arg>
+<arg>${GOOGLE_BUTTON_TEXT}</arg>
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<msg timestamp="20240116 18:00:47.241" level="INFO">Verifying element 'com.todoist:id/btn_google' contains exactly text 'Continue with Google'.</msg>
+<msg timestamp="20240116 18:00:47.424" level="INFO">criteria is com.todoist:id/btn_google</msg>
+<status status="PASS" starttime="20240116 18:00:47.235" endtime="20240116 18:00:47.425"/>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<arg>${FACEBOOK_BUTTON_ID}</arg>
+<arg>${FACEBOOK_BUTTON_TEXT}</arg>
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<msg timestamp="20240116 18:00:47.454" level="INFO">Verifying element 'com.todoist:id/btn_facebook' contains exactly text 'Continue with Facebook'.</msg>
+<msg timestamp="20240116 18:00:47.692" level="INFO">criteria is com.todoist:id/btn_facebook</msg>
+<status status="PASS" starttime="20240116 18:00:47.433" endtime="20240116 18:00:47.694"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${GOOGLE_BUTTON_ID}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20240116 18:00:47.726" level="INFO">Clicking element 'com.todoist:id/btn_google'.</msg>
+<msg timestamp="20240116 18:00:48.008" level="INFO">criteria is com.todoist:id/btn_google</msg>
+<status status="PASS" starttime="20240116 18:00:47.720" endtime="20240116 18:00:48.009"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${GOOGLE_CONTINUE_BUTTON_ID}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20240116 18:00:50.572" level="INFO">criteria is com.google.android.gms:id/continue_button
+criteria is com.google.android.gms:id/continue_button
+criteria is com.google.android.gms:id/continue_button
+criteria is com.google.android.gms:id/continue_button</msg>
+<status status="PASS" starttime="20240116 18:00:48.011" endtime="20240116 18:00:50.573"/>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<arg>${GOOGLE_CONTINUE_BUTTON_ID}</arg>
+<arg>${LOGIN_EMAIL_CONFIRMATION_TEXT}</arg>
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<msg timestamp="20240116 18:00:50.614" level="INFO">Verifying element 'com.google.android.gms:id/continue_button' contains exactly text 'Fes servir oriol'.</msg>
+<msg timestamp="20240116 18:00:51.228" level="INFO">criteria is com.google.android.gms:id/continue_button</msg>
+<status status="PASS" starttime="20240116 18:00:50.600" endtime="20240116 18:00:51.232"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${GOOGLE_CONTINUE_BUTTON_ID}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20240116 18:00:51.256" level="INFO">Clicking element 'com.google.android.gms:id/continue_button'.</msg>
+<msg timestamp="20240116 18:00:52.134" level="INFO">criteria is com.google.android.gms:id/continue_button</msg>
+<status status="PASS" starttime="20240116 18:00:51.250" endtime="20240116 18:00:52.135"/>
+</kw>
+<doc>Open todoist App. Verify elements and login using google personal email</doc>
+<status status="PASS" starttime="20240116 18:00:17.272" endtime="20240116 18:00:52.158"/>
+</test>
+<test id="s1-s1-s1-t2" name="I Click on Browse button" line="19">
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${TODOIST_MENU_TEXT}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20240116 18:00:52.438" endtime="20240116 18:00:58.362"/>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<arg>${TODOIST_MENU_ID}</arg>
+<arg>${TODOIST_MENU_TEXT}</arg>
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<msg timestamp="20240116 18:00:58.381" level="INFO">Verifying element 'com.todoist:id/empty_title' contains exactly text 'What do you need to get done today?'.</msg>
+<msg timestamp="20240116 18:00:59.191" level="INFO">criteria is com.todoist:id/empty_title</msg>
+<status status="PASS" starttime="20240116 18:00:58.363" endtime="20240116 18:00:59.192"/>
+</kw>
+<for flavor="IN">
+<var>${tab}</var>
+<value>@{MENU_TABS}</value>
+<iter>
+<var name="${tab}">Today</var>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${tab}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20240116 18:00:59.563" level="INFO">Current page contains text 'Today'.</msg>
+<status status="PASS" starttime="20240116 18:00:59.225" endtime="20240116 18:00:59.564"/>
+</kw>
+<status status="PASS" starttime="20240116 18:00:59.217" endtime="20240116 18:00:59.564"/>
+</iter>
+<iter>
+<var name="${tab}">Inbox</var>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${tab}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20240116 18:00:59.913" level="INFO">Current page contains text 'Inbox'.</msg>
+<status status="PASS" starttime="20240116 18:00:59.570" endtime="20240116 18:00:59.915"/>
+</kw>
+<status status="PASS" starttime="20240116 18:00:59.565" endtime="20240116 18:00:59.920"/>
+</iter>
+<iter>
+<var name="${tab}">Search</var>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${tab}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20240116 18:01:00.258" level="INFO">Current page contains text 'Search'.</msg>
+<status status="PASS" starttime="20240116 18:00:59.921" endtime="20240116 18:01:00.274"/>
+</kw>
+<status status="PASS" starttime="20240116 18:00:59.920" endtime="20240116 18:01:00.275"/>
+</iter>
+<iter>
+<var name="${tab}">Browse</var>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${tab}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20240116 18:01:00.848" level="INFO">Current page contains text 'Browse'.</msg>
+<status status="PASS" starttime="20240116 18:01:00.279" endtime="20240116 18:01:00.850"/>
+</kw>
+<status status="PASS" starttime="20240116 18:01:00.276" endtime="20240116 18:01:00.853"/>
+</iter>
+<status status="PASS" starttime="20240116 18:00:59.215" endtime="20240116 18:01:00.854"/>
+</for>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${BROWSE_TEXT}</arg>
+<doc>Click text identified by ``text``.</doc>
+<msg timestamp="20240116 18:01:01.892" level="INFO">xpath criteria: //*[contains(@text,"Browse")]</msg>
+<status status="PASS" starttime="20240116 18:01:00.860" endtime="20240116 18:01:01.893"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${USERNAME_TEXT}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20240116 18:01:01.924" endtime="20240116 18:01:03.690"/>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${MY_PROJECTS_TEXT}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20240116 18:01:04.330" level="INFO">Current page contains text 'My Projects'.</msg>
+<status status="PASS" starttime="20240116 18:01:03.718" endtime="20240116 18:01:04.334"/>
+</kw>
+<doc>Enter todoist menu and loop the available tabs making sure all of them are displayed. Click on Browse tab</doc>
+<status status="PASS" starttime="20240116 18:00:52.350" endtime="20240116 18:01:04.336"/>
+</test>
+<test id="s1-s1-s1-t3" name="I logout from Application" line="30">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${SETTINGS_CONTENT_DESK}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20240116 18:01:04.348" level="INFO">Clicking element '//android.view.View[@content-desc='Settings']'.</msg>
+<msg timestamp="20240116 18:01:05.606" level="INFO">xpath criteria: //android.view.View[@content-desc='Settings']</msg>
+<status status="PASS" starttime="20240116 18:01:04.341" endtime="20240116 18:01:05.608"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${SETTINGS_TEXT}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20240116 18:01:05.615" endtime="20240116 18:01:05.884"/>
+</kw>
+<for flavor="IN">
+<var>${tab}</var>
+<value>@{SETTINGS_TABS}</value>
+<iter>
+<var name="${tab}">Upgrade to Pro</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${tab}" == "${NOTIFICATIONS_TEXT}"</arg>
+<arg>Scroll</arg>
+<arg>${NOTIFICATION_START_SCROLL_XPATH}</arg>
+<arg>${GENERAL_END_SCROLL_XPATH}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240116 18:01:05.899" endtime="20240116 18:01:05.901"/>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${tab}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20240116 18:01:06.120" level="INFO">Current page contains text 'Upgrade to Pro'.</msg>
+<status status="PASS" starttime="20240116 18:01:05.902" endtime="20240116 18:01:06.121"/>
+</kw>
+<status status="PASS" starttime="20240116 18:01:05.892" endtime="20240116 18:01:06.122"/>
+</iter>
+<iter>
+<var name="${tab}">Account</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${tab}" == "${NOTIFICATIONS_TEXT}"</arg>
+<arg>Scroll</arg>
+<arg>${NOTIFICATION_START_SCROLL_XPATH}</arg>
+<arg>${GENERAL_END_SCROLL_XPATH}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240116 18:01:06.124" endtime="20240116 18:01:06.126"/>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${tab}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20240116 18:01:06.354" level="INFO">Current page contains text 'Account'.</msg>
+<status status="PASS" starttime="20240116 18:01:06.127" endtime="20240116 18:01:06.355"/>
+</kw>
+<status status="PASS" starttime="20240116 18:01:06.123" endtime="20240116 18:01:06.355"/>
+</iter>
+<iter>
+<var name="${tab}">General</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${tab}" == "${NOTIFICATIONS_TEXT}"</arg>
+<arg>Scroll</arg>
+<arg>${NOTIFICATION_START_SCROLL_XPATH}</arg>
+<arg>${GENERAL_END_SCROLL_XPATH}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240116 18:01:06.356" endtime="20240116 18:01:06.359"/>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${tab}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20240116 18:01:06.847" level="INFO">Current page contains text 'General'.</msg>
+<status status="PASS" starttime="20240116 18:01:06.359" endtime="20240116 18:01:06.853"/>
+</kw>
+<status status="PASS" starttime="20240116 18:01:06.356" endtime="20240116 18:01:06.853"/>
+</iter>
+<iter>
+<var name="${tab}">Theme</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${tab}" == "${NOTIFICATIONS_TEXT}"</arg>
+<arg>Scroll</arg>
+<arg>${NOTIFICATION_START_SCROLL_XPATH}</arg>
+<arg>${GENERAL_END_SCROLL_XPATH}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240116 18:01:06.863" endtime="20240116 18:01:06.866"/>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${tab}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20240116 18:01:07.134" level="INFO">Current page contains text 'Theme'.</msg>
+<status status="PASS" starttime="20240116 18:01:06.867" endtime="20240116 18:01:07.138"/>
+</kw>
+<status status="PASS" starttime="20240116 18:01:06.857" endtime="20240116 18:01:07.138"/>
+</iter>
+<iter>
+<var name="${tab}">App icon</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${tab}" == "${NOTIFICATIONS_TEXT}"</arg>
+<arg>Scroll</arg>
+<arg>${NOTIFICATION_START_SCROLL_XPATH}</arg>
+<arg>${GENERAL_END_SCROLL_XPATH}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240116 18:01:07.140" endtime="20240116 18:01:07.141"/>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${tab}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20240116 18:01:07.367" level="INFO">Current page contains text 'App icon'.</msg>
+<status status="PASS" starttime="20240116 18:01:07.142" endtime="20240116 18:01:07.368"/>
+</kw>
+<status status="PASS" starttime="20240116 18:01:07.139" endtime="20240116 18:01:07.368"/>
+</iter>
+<iter>
+<var name="${tab}">Navigation bar</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${tab}" == "${NOTIFICATIONS_TEXT}"</arg>
+<arg>Scroll</arg>
+<arg>${NOTIFICATION_START_SCROLL_XPATH}</arg>
+<arg>${GENERAL_END_SCROLL_XPATH}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240116 18:01:07.370" endtime="20240116 18:01:07.371"/>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${tab}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20240116 18:01:07.554" level="INFO">Current page contains text 'Navigation bar'.</msg>
+<status status="PASS" starttime="20240116 18:01:07.371" endtime="20240116 18:01:07.556"/>
+</kw>
+<status status="PASS" starttime="20240116 18:01:07.369" endtime="20240116 18:01:07.557"/>
+</iter>
+<iter>
+<var name="${tab}">Navigation menu</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${tab}" == "${NOTIFICATIONS_TEXT}"</arg>
+<arg>Scroll</arg>
+<arg>${NOTIFICATION_START_SCROLL_XPATH}</arg>
+<arg>${GENERAL_END_SCROLL_XPATH}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240116 18:01:07.558" endtime="20240116 18:01:07.560"/>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${tab}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20240116 18:01:07.783" level="INFO">Current page contains text 'Navigation menu'.</msg>
+<status status="PASS" starttime="20240116 18:01:07.561" endtime="20240116 18:01:07.785"/>
+</kw>
+<status status="PASS" starttime="20240116 18:01:07.557" endtime="20240116 18:01:07.785"/>
+</iter>
+<iter>
+<var name="${tab}">Quick Add</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${tab}" == "${NOTIFICATIONS_TEXT}"</arg>
+<arg>Scroll</arg>
+<arg>${NOTIFICATION_START_SCROLL_XPATH}</arg>
+<arg>${GENERAL_END_SCROLL_XPATH}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240116 18:01:07.787" endtime="20240116 18:01:07.788"/>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${tab}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20240116 18:01:07.962" level="INFO">Current page contains text 'Quick Add'.</msg>
+<status status="PASS" starttime="20240116 18:01:07.788" endtime="20240116 18:01:07.964"/>
+</kw>
+<status status="PASS" starttime="20240116 18:01:07.786" endtime="20240116 18:01:07.964"/>
+</iter>
+<iter>
+<var name="${tab}">Productivity</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${tab}" == "${NOTIFICATIONS_TEXT}"</arg>
+<arg>Scroll</arg>
+<arg>${NOTIFICATION_START_SCROLL_XPATH}</arg>
+<arg>${GENERAL_END_SCROLL_XPATH}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240116 18:01:07.967" endtime="20240116 18:01:07.967"/>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${tab}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20240116 18:01:08.138" level="INFO">Current page contains text 'Productivity'.</msg>
+<status status="PASS" starttime="20240116 18:01:07.968" endtime="20240116 18:01:08.139"/>
+</kw>
+<status status="PASS" starttime="20240116 18:01:07.966" endtime="20240116 18:01:08.140"/>
+</iter>
+<iter>
+<var name="${tab}">Reminders</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${tab}" == "${NOTIFICATIONS_TEXT}"</arg>
+<arg>Scroll</arg>
+<arg>${NOTIFICATION_START_SCROLL_XPATH}</arg>
+<arg>${GENERAL_END_SCROLL_XPATH}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240116 18:01:08.142" endtime="20240116 18:01:08.145"/>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${tab}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20240116 18:01:08.307" level="INFO">Current page contains text 'Reminders'.</msg>
+<status status="PASS" starttime="20240116 18:01:08.146" endtime="20240116 18:01:08.308"/>
+</kw>
+<status status="PASS" starttime="20240116 18:01:08.140" endtime="20240116 18:01:08.308"/>
+</iter>
+<iter>
+<var name="${tab}">Notifications</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${tab}" == "${NOTIFICATIONS_TEXT}"</arg>
+<arg>Scroll</arg>
+<arg>${NOTIFICATION_START_SCROLL_XPATH}</arg>
+<arg>${GENERAL_END_SCROLL_XPATH}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Scroll" library="AppiumLibrary">
+<arg>${NOTIFICATION_START_SCROLL_XPATH}</arg>
+<arg>${GENERAL_END_SCROLL_XPATH}</arg>
+<doc>Scrolls from one element to another
+Key attributes for arbitrary elements are `id` and `name`. See
+`introduction` for details about locating elements.</doc>
+<msg timestamp="20240116 18:01:09.968" level="INFO">xpath criteria: //android.widget.TextView[@text='Notifications']
+xpath criteria: //android.widget.TextView[@text='General']</msg>
+<status status="PASS" starttime="20240116 18:01:08.313" endtime="20240116 18:01:09.969"/>
+</kw>
+<status status="PASS" starttime="20240116 18:01:08.311" endtime="20240116 18:01:09.969"/>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${tab}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20240116 18:01:10.395" level="INFO">Current page contains text 'Notifications'.</msg>
+<status status="PASS" starttime="20240116 18:01:09.969" endtime="20240116 18:01:10.397"/>
+</kw>
+<status status="PASS" starttime="20240116 18:01:08.309" endtime="20240116 18:01:10.398"/>
+</iter>
+<iter>
+<var name="${tab}">Support</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${tab}" == "${NOTIFICATIONS_TEXT}"</arg>
+<arg>Scroll</arg>
+<arg>${NOTIFICATION_START_SCROLL_XPATH}</arg>
+<arg>${GENERAL_END_SCROLL_XPATH}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240116 18:01:10.404" endtime="20240116 18:01:10.412"/>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${tab}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20240116 18:01:10.828" level="INFO">Current page contains text 'Support'.</msg>
+<status status="PASS" starttime="20240116 18:01:10.413" endtime="20240116 18:01:10.833"/>
+</kw>
+<status status="PASS" starttime="20240116 18:01:10.398" endtime="20240116 18:01:10.833"/>
+</iter>
+<iter>
+<var name="${tab}">About</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${tab}" == "${NOTIFICATIONS_TEXT}"</arg>
+<arg>Scroll</arg>
+<arg>${NOTIFICATION_START_SCROLL_XPATH}</arg>
+<arg>${GENERAL_END_SCROLL_XPATH}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240116 18:01:10.834" endtime="20240116 18:01:10.837"/>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${tab}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20240116 18:01:11.547" level="INFO">Current page contains text 'About'.</msg>
+<status status="PASS" starttime="20240116 18:01:10.838" endtime="20240116 18:01:11.551"/>
+</kw>
+<status status="PASS" starttime="20240116 18:01:10.833" endtime="20240116 18:01:11.553"/>
+</iter>
+<iter>
+<var name="${tab}">What's new</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${tab}" == "${NOTIFICATIONS_TEXT}"</arg>
+<arg>Scroll</arg>
+<arg>${NOTIFICATION_START_SCROLL_XPATH}</arg>
+<arg>${GENERAL_END_SCROLL_XPATH}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240116 18:01:11.562" endtime="20240116 18:01:11.564"/>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${tab}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20240116 18:01:12.129" level="INFO">Current page contains text 'What's new'.</msg>
+<status status="PASS" starttime="20240116 18:01:11.565" endtime="20240116 18:01:12.130"/>
+</kw>
+<status status="PASS" starttime="20240116 18:01:11.554" endtime="20240116 18:01:12.130"/>
+</iter>
+<iter>
+<var name="${tab}">Log out</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${tab}" == "${NOTIFICATIONS_TEXT}"</arg>
+<arg>Scroll</arg>
+<arg>${NOTIFICATION_START_SCROLL_XPATH}</arg>
+<arg>${GENERAL_END_SCROLL_XPATH}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240116 18:01:12.131" endtime="20240116 18:01:12.131"/>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${tab}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20240116 18:01:12.338" level="INFO">Current page contains text 'Log out'.</msg>
+<status status="PASS" starttime="20240116 18:01:12.132" endtime="20240116 18:01:12.339"/>
+</kw>
+<status status="PASS" starttime="20240116 18:01:12.130" endtime="20240116 18:01:12.340"/>
+</iter>
+<status status="PASS" starttime="20240116 18:01:05.890" endtime="20240116 18:01:12.340"/>
+</for>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${EMAIL_TEXT}</arg>
+<doc>Click text identified by ``text``.</doc>
+<msg timestamp="20240116 18:01:12.529" level="INFO">xpath criteria: //*[contains(@text,"iverpierce@gmail.com")]</msg>
+<status status="PASS" starttime="20240116 18:01:12.342" endtime="20240116 18:01:12.531"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${LOGOUT_POPUP_CONFIRMATION_TEXT}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20240116 18:01:12.541" endtime="20240116 18:01:13.382"/>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<arg>${LOGOUT_POPUP_CONFIRMATION_ID}</arg>
+<arg>${LOGOUT_POPUP_CONFIRMATION_TEXT}</arg>
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<msg timestamp="20240116 18:01:13.394" level="INFO">Verifying element 'android:id/message' contains exactly text 'Are you sure you want to log out?'.</msg>
+<msg timestamp="20240116 18:01:13.487" level="INFO">criteria is android:id/message</msg>
+<status status="PASS" starttime="20240116 18:01:13.382" endtime="20240116 18:01:13.488"/>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<arg>${LOGOUT_POPUP_YES_ID}</arg>
+<arg>${YES_TEXT}</arg>
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<msg timestamp="20240116 18:01:13.493" level="INFO">Verifying element 'android:id/button1' contains exactly text 'YES'.</msg>
+<msg timestamp="20240116 18:01:13.682" level="INFO">criteria is android:id/button1</msg>
+<status status="PASS" starttime="20240116 18:01:13.489" endtime="20240116 18:01:13.683"/>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<arg>${LOGOUT_POPUP_NO_ID}</arg>
+<arg>${NO_TEXT}</arg>
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<msg timestamp="20240116 18:01:13.701" level="INFO">Verifying element 'android:id/button2' contains exactly text 'NO'.</msg>
+<msg timestamp="20240116 18:01:13.836" level="INFO">criteria is android:id/button2</msg>
+<status status="PASS" starttime="20240116 18:01:13.685" endtime="20240116 18:01:13.838"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${LOGOUT_POPUP_YES_ID}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20240116 18:01:13.869" level="INFO">Clicking element 'android:id/button1'.</msg>
+<msg timestamp="20240116 18:01:14.135" level="INFO">criteria is android:id/button1</msg>
+<status status="PASS" starttime="20240116 18:01:13.852" endtime="20240116 18:01:14.136"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${TODOIST_LOGO_ID}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20240116 18:01:17.313" level="INFO">criteria is com.todoist:id/logo</msg>
+<status status="PASS" starttime="20240116 18:01:14.137" endtime="20240116 18:01:17.315"/>
+</kw>
+<doc>Loop the Seetings values making sure all of them are displayed. Confirm logout app</doc>
+<status status="PASS" starttime="20240116 18:01:04.338" endtime="20240116 18:01:17.333"/>
+</test>
+<test id="s1-s1-s1-t4" name="I remove Application from my Phone" line="46">
+<kw name="Remove Application" library="AppiumLibrary">
+<arg>${APP_ID}</arg>
+<doc>Removes the application that is identified with an application id</doc>
+<status status="PASS" starttime="20240116 18:01:17.394" endtime="20240116 18:01:20.257"/>
+</kw>
+<doc>Remove app from the phone</doc>
+<status status="PASS" starttime="20240116 18:01:17.391" endtime="20240116 18:01:20.258"/>
+</test>
+<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20240116 18:01:20.260" endtime="20240116 18:01:21.582"/>
+</kw>
+<doc>ToDoist Android Login-logout tests</doc>
+<status status="PASS" starttime="20240116 18:00:16.420" endtime="20240116 18:01:21.583"/>
+</suite>
+<status status="PASS" starttime="20240116 18:00:16.410" endtime="20240116 18:01:21.628"/>
+</suite>
+<status status="PASS" starttime="20240116 18:00:16.209" endtime="20240116 18:01:21.638"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="RingZero">RingZero</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1" name="Tests">RingZero.Tests</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1-s1" name="Android Login">RingZero.Tests.Android Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
