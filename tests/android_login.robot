@@ -28,7 +28,7 @@ I Click on Browse button
   Page Should Contain Text  ${MY_PROJECTS_TEXT}
 
 I logout from Application
-  [Documentation]  Loop the Seetings values making sure all of them are displayed. Confirm logout app
+  [Documentation]  Loop the Settings values making sure all of them are displayed. Confirm logout app
   Click Element  ${SETTINGS_CONTENT_DESK}
   Wait Until Page Contains  ${SETTINGS_TEXT}  timeout=${TIMEOUT}
   FOR  ${tab}  IN  @{SETTINGS_TABS}
