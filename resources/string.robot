@@ -16,7 +16,7 @@ ${EMAIL_TEXT}  iverpierce@gmail.com
 ${LOGOUT_POPUP_CONFIRMATION_TEXT}  Are you sure you want to log out?
 ${YES_TEXT}  YES
 ${NO_TEXT}  NO
-${TIMEOUT}  20
+${TIMEOUT}  60
 @{MENU_TABS}=  Today  Inbox  Search  Browse
 @{SETTINGS_TABS}=  Upgrade to Pro  Account  ${GENERAL_TEXT}  Theme  App icon  Navigation bar  Navigation menu  Quick Add  Productivity  Reminders  ${NOTIFICATIONS_TEXT}  Support  About  What's new  Log out
 ${APP_ID}  com.todoist
